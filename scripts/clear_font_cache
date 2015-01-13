@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Script to clear font cache
+
+color() {
+  echo -e "\e[$1;38;5;$2m"
+}
+no_color() {
+  echo -e "\e[0m"
+}
+
+report() {
+  $* |
+    while IFS= read line
+    do
+      echo -e "$(color 0 7) > $line$no_color"
+    done
+}
+echo -e "$(color 0 1)Clearing font cache..."
+report sudo atsutil databases -remove
+
+echo -e "\n$(color 0 1)Restarting the ATS (Apple Type Solution) Server..."
+report atsutil server -shutdown && report atsutil server -ping
