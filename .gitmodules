@@ -7,3 +7,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "itg.zsh-theme"]
+	path = itg.zsh-theme
+	url = git@github.com:itsthatguy/itg.zsh-theme.git
