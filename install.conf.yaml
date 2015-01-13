@@ -1,5 +1,5 @@
 - shell:
-  - [git update-submodules, Installing/updating submodules]
+  - [git submodules foreach git pull, Installing/updating submodules]
 
 - clean: ['~']
 - link:
