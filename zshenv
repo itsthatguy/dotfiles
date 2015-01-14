@@ -9,7 +9,7 @@ export PATH=$HEROKU:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/s
 
 # Various Environment Variables
 export PGHOST=localhost
-export EDITOR="subl -w"
+export EDITOR="vim"
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
 
@@ -24,7 +24,6 @@ if [[ -e /usr/local/share/chruby ]]; then
   chruby $(cat ~/.ruby-version)
 fi
 
-[ -d "$HOME/git/enova/8b/bin" ] && export PATH="$HOME/git/enova/8b/bin:$PATH"
 [ -d "$HOME/git/enova/8b/bin" ] && export PATH="$HOME/git/enova/8b/bin:$PATH"
 
 source ~/.zshrc

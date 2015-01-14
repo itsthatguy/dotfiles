@@ -9,7 +9,6 @@ source $ZSH/oh-my-zsh.sh
 
 # My Scripts
 source "$HOME/.scripts/aliases.sh"
-source "$HOME/.scripts/env.sh"
 
 # PERLS
 source ~/perl5/perlbrew/etc/bashrc
@@ -17,7 +16,7 @@ source ~/perl5/perlbrew/etc/bashrc
 # MY aliases
 alias rake='noglob rake'
 
-alias eae="subl ~/.zshenv ~/.zshrc"
+alias eae="vim ~/.zshenv ~/.zshrc"
 alias eax="source ~/.zshenv"
 
 # ZSH Configurations

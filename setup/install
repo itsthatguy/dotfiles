@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+source ./setup/start.sh
+source ./setup/lib.sh
+
+alert "Creating Symlinks to dotfiles..."
+
+sym ~/.gemrc gemrc
+sym ~/.gitconfig gitconfig
+sym ~/.gitignore_global gitignore
+sym ~/.oh-my-zsh oh-my-zsh/
+dup ~/.oh-my-zsh/themes/itg-text.zsh-theme itg.zsh-theme/itg-text.zsh-theme
+sym ~/.scripts scripts/
+sym ~/.tmux tmux/
+sym ~/.tmux.conf tmux.conf
+sym ~/.vim vim/
+sym ~/.vimrc vimrc
+sym ~/.vimrc.local vimrc.local
+sym ~/.zshenv zshenv
+sym ~/.zshrc zshrc
+
+alert "installing vim plugins"
+vim +PluginInstall +qall
+
+source ./setup/done.sh
