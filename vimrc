@@ -54,8 +54,6 @@ Bundle 'kien/ctrlp.vim'
 " Bundle 'ervandew/supertab'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
-Bundle 'shougo/vimproc'
-Bundle 'shougo/vimshell'
 Bundle 'shougo/neocomplete'
 
 " tags
