@@ -29,6 +29,5 @@ function sym {
 
 function dup {
   # check_file $1 $2
-  echo "symlinking"
   cp -rf $2 $1 || true
 }

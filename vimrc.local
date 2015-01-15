@@ -44,13 +44,16 @@ map <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
 
+" multikey mapping speed
+set timeout timeoutlen=750 ttimeoutlen=75
+
 " Delete character should not squash paste buffer
-" nnoremap <silent> x "_x
-" vnoremap <silent> x "_x
+nnoremap <silent> x "_x
+vnoremap <silent> x "_x
 
 " " xp should still function as transpose
-" nnoremap <silent> xp xph
-" vnoremap <silent> xp xph
+nnoremap <silent> xp xph
+vnoremap <silent> xp xph
 
 " cursor
 set cursorline
@@ -128,7 +131,7 @@ au WinEnter * :set cursorline
 au WinLeave * :set nocursorline
 au WinEnter * :set cursorcolumn
 au WinLeave * :set nocursorcolumn
-au WinEnter * :set colorcolumn=85
+au WinEnter * :set colorcolumn=79
 au WinLeave * :set colorcolumn=0
 
 "buffer enter / leave hooks
