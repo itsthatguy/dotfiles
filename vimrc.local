@@ -136,7 +136,7 @@ au WinLeave * :set colorcolumn=0
 "au BufWinLeave * silent! mkview
 
 "jshint config
-let g:syntastic_javascript_jshint_args = '--config /Users/itg/Dropbox/dotfiles/jshintrc'
+let g:syntastic_javascript_jshint_args = '--config /Users/itg/.jshintrc'
 
 " Autoclear trailing white-space and save cursor position
 fun! <SID>StripTrailingWhitespaces()

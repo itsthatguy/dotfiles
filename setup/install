@@ -5,6 +5,7 @@ source ./setup/lib.sh
 
 alert "Creating Symlinks to dotfiles..."
 
+sym ~/.jshintrc jshintrc
 sym ~/.gemrc gemrc
 sym ~/.gitconfig gitconfig
 sym ~/.gitignore_global gitignore
