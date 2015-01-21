@@ -14,6 +14,9 @@ alias mm='bundle exec middleman'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+alias starwars='telnet towel.blinkenlights.nl'
+alias nyancat='tenet miku.acm.uiuc.edu'
+
 del() {
   RED="\e[31m"
   YELLOW="\e[33m"
