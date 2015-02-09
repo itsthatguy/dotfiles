@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " BUNDLES
 Bundle 'gmarik/Vundle'
@@ -77,6 +77,8 @@ Bundle 'jgdavey/vim-turbux'
 
 " style
 Bundle 'godlygeek/csapprox'
+
+call vundle#end()
 
 filetype plugin indent on
 

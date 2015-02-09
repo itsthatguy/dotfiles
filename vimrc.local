@@ -4,6 +4,9 @@ set encoding=utf-8
 syntax on
 colorscheme itg-dark
 
+" fix for vim-rails chruby bug
+set shell=bash
+
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
 
@@ -11,9 +14,10 @@ let g:neocomplete#enable_at_startup = 1
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
-" vim directories
-set backupdir=~/.vimbackupdir,~/tmp,~/,.
-set directory=~/.vimbackupdir,~/tmp,~/,.
+" vim directories: backupdir, swap files
+set backup
+set backupdir=~/.vim/.backup//
+set dir=~/.vim/.swp//
 
 set modelines=0
 set nocompatible
@@ -32,7 +36,12 @@ set softtabstop=2
 set expandtab
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
 nnoremap <C-t> :tabe<Space>
+
+nmap <leader>h :%!html2haml --html-attributes --erb 2> /dev/null<CR>:set ft=haml<CR>
+vmap <leader>h :!html2haml --html-attributes --erb 2> /dev/null<CR>:set ft=haml<CR>
 
 " word separators
 set iskeyword-=_,-

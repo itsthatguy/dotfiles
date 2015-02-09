@@ -15,7 +15,8 @@ alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias starwars='telnet towel.blinkenlights.nl'
-alias nyancat='tenet miku.acm.uiuc.edu'
+alias nyan='telnet miku.acm.uiuc.edu'
+
 
 del() {
   RED="\e[31m"

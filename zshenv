@@ -1,3 +1,4 @@
+
 # PATH
 export MYSCRIPTS="$HOME/.scripts"
 export MYBIN="$HOME/bin"
@@ -17,13 +18,14 @@ export POW_DOMAINS=dev,test
 export NVM_DIR="/Users/itg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
+[ -d "$HOME/git/enova/8b/bin" ] && export PATH="$HOME/git/enova/8b/bin:$PATH"
+
+source ~/.zshrc
+
 # chruby's autoload is bad, and it should feel bad
 if [[ -e /usr/local/share/chruby ]]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
   chruby $(cat ~/.ruby-version)
 fi
-
-[ -d "$HOME/git/enova/8b/bin" ] && export PATH="$HOME/git/enova/8b/bin:$PATH"
-
-source ~/.zshrc
