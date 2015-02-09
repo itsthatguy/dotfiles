@@ -1,3 +1,4 @@
-vim/.swp/
-vim/.backup/
+vim/.swp/*
+vim/.backup/*
 vim/.netrwhist
+vim/view/*
