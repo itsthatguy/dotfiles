@@ -17,6 +17,7 @@ alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias starwars='telnet towel.blinkenlights.nl'
 alias nyan='telnet miku.acm.uiuc.edu'
 
+alias z="zeus"
 
 del() {
   RED="\e[31m"
