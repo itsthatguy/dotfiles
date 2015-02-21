@@ -19,7 +19,8 @@ export POW_DOMAINS=dev,test
 source $(brew --prefix nvm)/nvm.sh
 
 # additional config
-source ~/.zshrc
+[ -f ~/.zshrc ] && source ~/.zshrc
+[ -f ~/.zshsecrets ] && source ~/.zshsecrets
 
 # chruby's autoload is bad, and it should feel bad
 if [[ -e /usr/local/share/chruby ]]; then
