@@ -57,6 +57,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'tpope/vim-abolish'
 
 " tags
@@ -93,4 +95,8 @@ let g:airline_powerline_fonts = 1
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
+endif
+
+if filereadable(expand('~/.vimrc.secret'))
+  source ~/.vimrc.secret
 endif

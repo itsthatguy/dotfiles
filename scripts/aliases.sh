@@ -6,7 +6,7 @@ alias postgres.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias eae="subl ~/.zshenv ~/.zshrc"
 alias eax="source ~/.zshenv"
 
-alias v.="gvim ."
+alias v.="mvim ."
 alias pss="powify server stop && powify server start"
 alias be="bundle exec"
 alias mm='bundle exec middleman'
