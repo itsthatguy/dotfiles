@@ -1,11 +1,11 @@
 [submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
-	url = git@github.com:gmarik/Vundle.vim.git
+  path = vim/bundle/Vundle.vim
+  url = git@github.com:gmarik/Vundle.vim.git
   ignore = dirty
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
+  path = oh-my-zsh
+  url = git@github.com:robbyrussell/oh-my-zsh.git
   ignore = dirty
 [submodule "itg.zsh-theme"]
-	path = itg.zsh-theme
-	url = git@github.com:itsthatguy/itg.zsh-theme.git
+  path = itg.zsh-theme
+  url = git@github.com:itsthatguy/itg.zsh-theme.git

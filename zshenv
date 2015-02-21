@@ -1,4 +1,3 @@
-
 # PATH
 export MYSCRIPTS="$HOME/.scripts"
 export MYBIN="$HOME/bin"
@@ -7,7 +6,8 @@ export SBIN="/usr/local/sbin"
 export NPM="/usr/local/bin/npm"
 export HEROKU="/usr/local/heroku/bin"
 export COCOS_CONSOLE_ROOT="$HOME/git/open-games/cocos2d-js/tools/cocos2d-console/bin"
-export PATH=$COCOS_CONSOLE_ROOT:$HEROKU:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export COCOS_TEMPLATES_ROOT="$HOME/git/open-games/cocos2d-x/templates"
+export PATH=$COCOS_CONSOLE_ROOT:$COCOS_TEMPLATES_ROOT:$HEROKU:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Various Environment Variables
 export PGHOST=localhost
@@ -16,13 +16,9 @@ export TERM=xterm-256color
 export POW_DOMAINS=dev,test
 
 # nvm
-export NVM_DIR="/Users/itg/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 source $(brew --prefix nvm)/nvm.sh
 
-
-[ -d "$HOME/git/enova/8b/bin" ] && export PATH="$HOME/git/enova/8b/bin:$PATH"
-
+# additional config
 source ~/.zshrc
 
 # chruby's autoload is bad, and it should feel bad
