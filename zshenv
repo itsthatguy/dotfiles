@@ -15,9 +15,6 @@ export EDITOR="vim"
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
 
-# nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # additional config
 [ -f ~/.zshrc ] && source ~/.zshrc
 [ -f ~/.zshsecrets ] && source ~/.zshsecrets

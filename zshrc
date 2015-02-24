@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="itg-text"
 plugins=(git osx wd)
 source $ZSH/oh-my-zsh.sh
+unsetopt AUTO_CD
 
 # My Scripts
 source "$HOME/.scripts/aliases.sh"
@@ -24,6 +25,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # added by travis gem
 [ -f /Users/itg/.travis/travis.sh ] && source /Users/itg/.travis/travis.sh
+
+# nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # unbind ctrl-s
 [ -z "$PS1" ] || stty -ixon

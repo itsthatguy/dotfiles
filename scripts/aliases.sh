@@ -9,6 +9,7 @@ alias eax="source ~/.zshenv"
 alias v.="mvim ."
 alias pss="powify server stop && powify server start"
 alias be="bundle exec"
+alias ne='PATH=$(npm bin):$PATH'
 alias mm='bundle exec middleman'
 
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
