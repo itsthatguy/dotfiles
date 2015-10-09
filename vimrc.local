@@ -170,18 +170,6 @@ au WinLeave * :set colorcolumn=0
 " let g:syntastic_javascript_jshint_args = $HOME . '/.jshintrc'
 " let g:syntastic_javascript_checkers = ['jshint']
 
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
-fun! EnableAutoSave()
-  let g:auto_save = 1
-  set updatetime=200
-endfun
-
-set updatetime=4000
-let g:auto_save = 0
-let g:auto_save_in_insert_mode = 0
-autocmd FileType md,markdown :call EnableAutoSave()
-
 " JAVASCRIPT TO JSON
 :map <F3> :s/\(^\s\+\)\(\w\+\)\:/\1"\2":/
 

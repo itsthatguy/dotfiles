@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 " general vim/commands
 Plugin 'tpope/vim-repeat'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-scripts/vim-auto-save'
 
 " syntax
 Plugin 'vim-scripts/applescript.vim'
