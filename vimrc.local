@@ -1,11 +1,34 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+set iskeyword+=-,_
+
 syntax on
 colorscheme itg-dark
 
+" babel / jsx / json
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
+au BufRead,BufNewFile *.json set filetype=json
+let g:syntastic_json_checkers=['jsonlint']
+let g:vim_json_syntax_conceal = 0
+
+" Line numbers
+set number
+" autocmd InsertEnter * :set relativenumber! number
+" autocmd InsertLeave * :set number! relativenumber
+highlight ExtraWhitespace ctermbg=009
+" hi MatchParen                     ctermfg=009    ctermbg=NONE   cterm=underline      guifg=#f35656  guibg=NONE      gui=underline
+
+" enable mouse
+set mouse=a
+
 " fix for vim-rails chruby bug
 set shell=bash
+
+" CoVim
+let CoVim_default_name = "itg"
+let CoVim_default_port = "29100"
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -44,7 +67,7 @@ nmap <leader>h :%!html2haml --html-attributes --erb 2> /dev/null<CR>:set ft=haml
 vmap <leader>h :!html2haml --html-attributes --erb 2> /dev/null<CR>:set ft=haml<CR>
 
 " word separators
-set iskeyword-=_,-
+" set iskeyword-=_,-
 
 " EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
@@ -54,7 +77,7 @@ map <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
 " multikey mapping speed
-set timeout timeoutlen=750 ttimeoutlen=75
+set timeout timeoutlen=250 ttimeoutlen=75
 
 " Delete character should not squash paste buffer
 nnoremap <silent> x "_x
@@ -64,9 +87,9 @@ vnoremap <silent> x "_x
 nnoremap <silent> xp xph
 vnoremap <silent> xp xph
 
-" cursor
-set cursorline
-set cursorcolumn
+" cursor -- this is really laggy in macvim
+" set cursorline
+" set cursorcolumn
 
 set scrolloff=3
 set autoindent
@@ -80,7 +103,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set number
 
 " search
 set ignorecase
@@ -100,7 +122,7 @@ let mapleader = ","
 " ctrlp
 let g:ctrlp_show_hidden=1
 
-set wrap
+set nowrap
 set textwidth=79
 set formatoptions=qrn1
 
@@ -126,16 +148,13 @@ set wildignore+=*.o,*.obj,*.png,*.jpg,*.gif,**/.DS_Store,*.csv,.sass-cache/**
 nnoremap ,. <C-w><
 nnoremap ,p <C-w>>
 
-"quick access to clipboard history
-nmap ,yr :YRShow<CR>
-imap ,yr :YRShow<CR>
-
 " find the current file
 map <silent> <C-s> :NERDTree<CR><C-w>l:NERDTreeFind<CR>
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 "window enter / leave hooks
-"au WinEnter * :set number
-"au WinLeave * :set nonumber
 au WinEnter * :set cursorline
 au WinLeave * :set nocursorline
 au WinEnter * :set cursorcolumn
@@ -148,27 +167,23 @@ au WinLeave * :set colorcolumn=0
 "au BufWinLeave * silent! mkview
 
 "jshint config
-let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
+" let g:syntastic_javascript_jshint_args = $HOME . '/.jshintrc'
+" let g:syntastic_javascript_checkers = ['jshint']
 
-" Autoclear trailing white-space and save cursor position
-fun! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
-
-autocmd FileType c,cpp,java,php,ruby,python,vim,coffee,js,html,css autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 fun! EnableAutoSave()
   let g:auto_save = 1
   set updatetime=200
 endfun
 
-fun! DisableAutoSave()
-  let g:auto_save = 0
-  set updatetime=4000
-endfun
-
+set updatetime=4000
+let g:auto_save = 0
+let g:auto_save_in_insert_mode = 0
 autocmd FileType md,markdown :call EnableAutoSave()
-autocmd FileType * :call DisableAutoSave()
+
+" JAVASCRIPT TO JSON
+:map <F3> :s/\(^\s\+\)\(\w\+\)\:/\1"\2":/
+
+" use == to Line up multiline javascript arguments
+set cino+=(0<Enter>)

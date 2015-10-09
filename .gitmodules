@@ -9,3 +9,6 @@
 [submodule "itg.zsh-theme"]
   path = itg.zsh-theme
   url = git@github.com:itsthatguy/itg.zsh-theme.git
+[submodule "modules/wd"]
+  path = modules/wd
+  url = git@github.com:mfaerevaag/wd.git

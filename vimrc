@@ -13,14 +13,18 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/vim-auto-save'
 
 " syntax
+Plugin 'vim-scripts/applescript.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'leshill/vim-json'
+Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-haml'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'mxw/vim-jsx'
+Plugin 'vim-scripts/nginx.vim'
 " Plugin 'tpope/vim-markdown'
 Plugin 'tdesikan/vim-tritium'
 Plugin 'slim-template/vim-slim'
-Plugin 'rylnd/vim-javascript-syntax'
+" Plugin 'rylnd/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'wavded/vim-stylus'
@@ -43,12 +47,13 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'tpope/vim-commentary'
 " Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-speeddating'
+" Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'mattn/emmet-vim'
 
 " files/search/buffers
+" Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'duff/vim-bufonly'
 Plugin 'mileszs/ack.vim'
@@ -60,6 +65,7 @@ Plugin 'shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'tpope/vim-abolish'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " tags
 Plugin 'tpope/vim-ragtag'
@@ -82,6 +88,7 @@ Plugin 'jgdavey/vim-turbux'
 
 " tools
 Plugin 'bartek/vim-draftin'
+Plugin 'FredKSchott/CoVim'
 
 " style
 Plugin 'godlygeek/csapprox'
@@ -90,7 +97,8 @@ call vundle#end()
 
 filetype plugin indent on
 
-set guifont=Monaco\ for\ Powerline:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+set linespace=6
 let g:airline_powerline_fonts = 1
 
 if filereadable(expand('~/.vimrc.local'))
