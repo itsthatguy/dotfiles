@@ -9,8 +9,7 @@ sym ~/.jshintrc jshintrc
 sym ~/.gemrc gemrc
 sym ~/.gitconfig gitconfig
 sym ~/.gitignore_global gitignore
-sym ~/.oh-my-zsh oh-my-zsh/
-dup ~/.oh-my-zsh/themes/itg-text.zsh-theme itg.zsh-theme/itg-text.zsh-theme
+dup ~/.zsh/themes/itg-text.zsh-theme itg.zsh-theme/itg-text.zsh-theme
 sym ~/.scripts scripts/
 sym ~/.tmux tmux/
 sym ~/.tmux.conf tmux.conf

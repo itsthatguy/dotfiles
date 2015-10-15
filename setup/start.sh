@@ -8,3 +8,4 @@ alert "Updating Submodules"
 git submodule update --init --recursive
 git submodule foreach git pull
 mkdir -p ~/.dotfiles_backup/
+mkdir -p ~/.zsh/

@@ -2,5 +2,5 @@ vim/.swp/*
 vim/.backup/*
 vim/.netrwhist
 vim/view/*
-vim/bundle/*
+vim/bundle/
 oh-my-zsh/

@@ -5,7 +5,7 @@ alias random_giggle="ruby $HOME/.scripts/random_giggle.rb"
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-source "$HOME/.oh-my-zsh/themes/itg-text.zsh-theme"
+source "$HOME/.zsh/themes/itg-text.zsh-theme"
 unsetopt AUTO_CD
 
 export EDITOR="vim"
