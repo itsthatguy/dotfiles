@@ -2,11 +2,19 @@
 alias random_giggle="ruby $HOME/.scripts/random_giggle.rb"
 
 # ZSH Config
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="itg-text"
-plugins=(git osx wd)
-source $ZSH/oh-my-zsh.sh
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+source "$HOME/.oh-my-zsh/themes/itg-text.zsh-theme"
 unsetopt AUTO_CD
+
+export EDITOR="vim"
+
+# zsh modules
+export MODULES_PATH=$HOME/.zmodules
+wd() { source $MODULES_PATH/wd/wd.sh }
+fpath=($MODULES_PATH/wd $fpath)
+rm -f ~/.zcompdump; compinit
 
 # My Scripts
 source "$HOME/.scripts/aliases.sh"

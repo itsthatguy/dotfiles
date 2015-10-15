@@ -5,15 +5,20 @@ export BIN="/usr/local/bin"
 export SBIN="/usr/local/sbin"
 export NPM="/usr/local/bin/npm"
 export HEROKU="/usr/local/heroku/bin"
-export COCOS_CONSOLE_ROOT="$HOME/git/open-games/cocos2d-js/tools/cocos2d-console/bin"
-export COCOS_TEMPLATES_ROOT="$HOME/git/open-games/cocos2d-x/templates"
-export PATH=$COCOS_CONSOLE_ROOT:$COCOS_TEMPLATES_ROOT:$HEROKU:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export GOPATH="$HOME/.go"
+export GOBIN="$GOPATH/bin"
+export PATH=$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Various Environment Variables
+export PGDATA='/usr/local/var/postgres'
 export PGHOST=localhost
-export EDITOR="vim"
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
+
+# docker-machine config
+if [[ "$(docker-machine status gopro)" = "Running" ]]; then
+  eval "$(docker-machine env gopro)"
+fi
 
 # additional config
 [ -f ~/.zshrc ] && source ~/.zshrc
