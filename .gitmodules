@@ -2,9 +2,9 @@
   path = vim/bundle/Vundle.vim
   url = git@github.com:gmarik/Vundle.vim.git
   ignore = dirty
-[submodule "oh-my-zsh"]
-  path = oh-my-zsh
-  url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "prezto"]
+  path = prezto
+  url = git@github.com:sorin-ionescu/prezto.git
   ignore = dirty
 [submodule "itg.zsh-theme"]
   path = itg.zsh-theme

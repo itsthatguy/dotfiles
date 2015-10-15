@@ -9,6 +9,7 @@ sym ~/.jshintrc jshintrc
 sym ~/.gemrc gemrc
 sym ~/.gitconfig gitconfig
 sym ~/.gitignore_global gitignore
+sym ~/.prezto prezto/
 dup ~/.zsh/themes/itg-text.zsh-theme itg.zsh-theme/itg-text.zsh-theme
 sym ~/.scripts scripts/
 sym ~/.tmux tmux/
