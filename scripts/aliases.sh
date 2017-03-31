@@ -2,7 +2,7 @@
 alias rake='noglob rake'
 
 alias eae="subl ~/.zshenv ~/.zshrc"
-alias eax="source ~/.zshenv"
+alias eax="source ~/.zshrc"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 alias v.="mvim ."

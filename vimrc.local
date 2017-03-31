@@ -1,3 +1,7 @@
+set guifont=Monaco\ for\ Powerline:h15
+set linespace=6
+let g:vimconsole#auto_redraw = 1
+
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -5,6 +9,8 @@ set iskeyword+=-,_
 
 syntax on
 colorscheme itg-dark
+" set background=light
+" colorscheme snappy-light
 
 " babel / jsx / json
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -13,11 +19,15 @@ au BufRead,BufNewFile *.json set filetype=json
 let g:syntastic_json_checkers=['jsonlint']
 let g:vim_json_syntax_conceal = 0
 
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+
 " Line numbers
 set number
 " autocmd InsertEnter * :set relativenumber! number
 " autocmd InsertLeave * :set number! relativenumber
 highlight ExtraWhitespace ctermbg=009
+autocmd BufWritePre * StripWhitespace
 " hi MatchParen                     ctermfg=009    ctermbg=NONE   cterm=underline      guifg=#f35656  guibg=NONE      gui=underline
 
 " enable mouse
@@ -31,6 +41,7 @@ let CoVim_default_name = "itg"
 let CoVim_default_port = "29100"
 
 " neocomplete
+
 let g:neocomplete#enable_at_startup = 1
 
 " vimshell
@@ -47,7 +58,11 @@ set nocompatible
 
 " airline
 let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled=0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " tmuxline
 let g:tmuxline_powerline_separators=1
@@ -74,7 +89,7 @@ vmap <leader>h :!html2haml --html-attributes --erb 2> /dev/null<CR>:set ft=haml<
 map <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-nmap <Leader>a <Plug>(EasyAlign)
+nmap <Leader>e <Plug>(EasyAlign)
 
 " multikey mapping speed
 set timeout timeoutlen=250 ttimeoutlen=75
@@ -87,9 +102,16 @@ vnoremap <silent> x "_x
 nnoremap <silent> xp xph
 vnoremap <silent> xp xph
 
+" swap buffers
+nnoremap <silent> <C-o><C-o> :bn<CR>
+nnoremap <silent> <C-i><C-i> :bp<CR>
+
+
+nnoremap <leader>q :Bdelete<CR>
+
 " cursor -- this is really laggy in macvim
-" set cursorline
-" set cursorcolumn
+set cursorline
+set cursorcolumn
 
 set scrolloff=3
 set autoindent
@@ -116,18 +138,30 @@ vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>r :%s/
 
-" leader
-let mapleader = ","
+" ====================================================================
+" ctrlp configuration
+" ====================================================================
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
 
-" ctrlp
-let g:ctrlp_show_hidden=1
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" Ag for silversearcher searching (like Ack)
+nnoremap <leader>a :Ag<Space>
 
 set nowrap
 set textwidth=79
 set formatoptions=qrn1
 
-set list
-set listchars=tab:▸\
+" set list
+" set listchars=tab:▸\
 
 " movement keys
 " nnoremap <up> <nop>
@@ -150,9 +184,7 @@ nnoremap ,p <C-w>>
 
 " find the current file
 map <silent> <C-s> :NERDTree<CR><C-w>l:NERDTreeFind<CR>
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+" let g:NERDTreeDirArrows = 0
 
 "window enter / leave hooks
 au WinEnter * :set cursorline

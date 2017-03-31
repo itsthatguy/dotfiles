@@ -21,6 +21,7 @@
   ign = ls-files -o -i --exclude-standard
   redo = commit --amen -Chead
   refrog = reflog
+  tree = log --graph --oneline --decorate --color --all
 [color]
   ui = auto
 [color "branch"]
