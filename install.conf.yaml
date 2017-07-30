@@ -1,0 +1,37 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [brew install zsh, Installing zsh]
+  - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
+  - [vim +PluginInstall +qall, Install vim plugins]
+  - Make sure to update your user in ~/.gitconfig (vim ~/.gitconfig)
+
+- link:
+    # tmux config
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux
+
+    # vim config
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.vimrc.local: vimrc.local
+
+    # zsh config
+    ~/.zshenv: zshenv
+    ~/.zshrc: zshrc
+    ~/.zgen: zgen
+    ~/.zprezto: zprezto
+    ~/.scripts: scripts
+
+    # ruby config
+    ~/.gemrc: gemrc
+
+    # git config
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
