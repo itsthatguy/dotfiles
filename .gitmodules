@@ -3,12 +3,15 @@
   url = git@github.com:gmarik/Vundle.vim.git
   ignore = dirty
 [submodule "prezto"]
-  path = prezto
-  url = git@github.com:sorin-ionescu/prezto.git
+	path = prezto
+	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
 [submodule "itg.zsh-theme"]
   path = itg.zsh-theme
   url = git@github.com:itsthatguy/itg.zsh-theme.git
-[submodule "modules/wd"]
-  path = modules/wd
-  url = git@github.com:mfaerevaag/wd.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "zgen"]
+	path = zgen
+	url = https://github.com/tarjoilija/zgen.git

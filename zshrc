@@ -27,7 +27,7 @@ export EDITOR="vim"
 export MODULES_PATH=$HOME/.zmodules
 wd() { source $MODULES_PATH/wd/wd.sh }
 fpath=($MODULES_PATH/wd $fpath)
-# rm -f ~/.zcompdump; compinit
+rm -f ~/.zcompdump; compinit
 
 # My Scripts
 source "$HOME/.scripts/aliases.sh"
@@ -39,7 +39,7 @@ source "$HOME/.scripts/aliases.sh"
 COMPLETION_WAITING_DOTS="true"
 
 # added by travis gem
-[ -f /Users/itg/.travis/travis.sh ] && source /Users/itg/.travis/travis.sh
+# [ -f /Users/itg/.travis/travis.sh ] && source /Users/itg/.travis/travis.sh
 
 # unbind ctrl-s
 [ -z "$PS1" ] || stty -ixon
@@ -47,22 +47,18 @@ COMPLETION_WAITING_DOTS="true"
 # bash is stupid sometimes and enter key dont work
 stty icrnl
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
 [[ -f /usr/local/opt/nvm/versions/node/v4.1.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /usr/local/opt/nvm/versions/node/v4.1.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
 
-export NVM_DIR="/Users/kevin/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# chruby's autoload is bad, and it should feel bad
-if [[ -e /usr/local/share/chruby ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-  chruby $(cat ~/.ruby-version)
-fi
 
 # Android stuff
 export ANDROID_SDK=$HOME/android-sdk-macosx
 export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
+
+# added by travis gem
+[ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
