@@ -10,8 +10,6 @@
   - [brew install zsh, Installing zsh]
   - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
   - [vim +PluginInstall +qall, Install vim plugins]
-  -
-    description: Make sure to update your user in ~/.gitconfig (vim ~/.gitconfig)
 
 - link:
     # tmux config
