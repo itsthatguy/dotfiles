@@ -62,3 +62,4 @@ export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
 
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

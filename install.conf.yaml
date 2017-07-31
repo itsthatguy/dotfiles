@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - shell:
+  - [xcode-select --install, Installing xcode tools]
   - [git submodule update --init --recursive, Installing submodules]
   - [brew install zsh, Installing zsh]
   - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
@@ -25,6 +26,7 @@
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
     ~/.zgen: zgen
+    ~/.zsh/themes/itg-text.zsh-theme: zsh-themes/itg-text.zsh-theme
     ~/.zprezto: prezto
     ~/.scripts: scripts
 

@@ -6,9 +6,6 @@
 	path = prezto
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
-[submodule "itg.zsh-theme"]
-  path = itg.zsh-theme
-  url = git@github.com:itsthatguy/itg.zsh-theme.git
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
