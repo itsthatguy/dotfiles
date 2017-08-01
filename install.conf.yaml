@@ -28,6 +28,7 @@
     ~/.zgen: zgen
     ~/.zsh/themes/itg-text.zsh-theme: zsh-themes/itg-text.zsh-theme
     ~/.zprezto: prezto
+    ~/.zpreztorc: zpreztorc
     ~/.scripts: scripts
 
     # ruby config
