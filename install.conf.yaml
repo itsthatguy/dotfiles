@@ -34,6 +34,9 @@
     # ruby config
     ~/.gemrc: gemrc
 
+    # atom config
+    ~/.atom: atom
+
     # git config
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore

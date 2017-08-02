@@ -1,0 +1,31 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-gfm"
+      "welcome"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+    titleBar: "hidden"
+  editor:
+    fontSize: 15
+  "exception-reporting":
+    userId: "3e2203c5-1262-4793-86f4-e432fa8d129b"
+  "linter-ui-default":
+    panelHeight: 62
+    showPanel: true
+  navigate:
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
+  "tree-view": {}
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
+editor:
+  autoIndent: true
+  autoIndentOnPaste: true
