@@ -8,8 +8,6 @@
 - shell:
   - [xcode-select --install, Installing xcode tools]
   - [git submodule update --init --recursive, Installing submodules]
-  - [./bootstrap, install apps]
-  - [vim +PluginInstall +qall, Install vim plugins]
 
 - link:
     # tmux config
@@ -42,3 +40,7 @@
 
     # hyper
     ~/.hyper.js: hyper.js
+
+- shell:
+  - [./bootstrap, install apps]
+  - [vim +PluginInstall +qall, Install vim plugins]
