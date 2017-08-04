@@ -45,12 +45,9 @@ fi
 
 if ! exists "zsh" brew info zsh; then
   brew install zsh
-  chsh -s /bin/zsh
-fi
-
-if ! exists "zsh" brew info zsh; then
-  brew install zsh
-  chsh -s /bin/zsh
+  local zsh_path=which zsh
+  sudo echo $zsh_path >> /etc/shells
+  chsh -s $zsh_path
 fi
 
 if ! exists "nvm" ~/.nvm; then
