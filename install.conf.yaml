@@ -40,6 +40,7 @@
 
     # hyper
     ~/.hyper.js: hyper.js
+    ~/.hyper_plugins/local: hyper_plugins/local
 
 - shell:
   - [./bootstrap, install apps]
