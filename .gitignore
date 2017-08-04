@@ -11,3 +11,4 @@ atom/compile-cache/
 atom/recovery/
 atom/storage/
 atom/packages/
+node_modules/
