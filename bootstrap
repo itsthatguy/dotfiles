@@ -1,0 +1,57 @@
+#!/usr/bin/env sh
+exists () {
+	local doesExist=1
+
+  local app=$1
+  local command_or_path="${@:2}"
+
+  echo "checking to install ${app}..."
+
+	# command exists
+  if command -v "$command_or_path" >/dev/null 2>&1; then
+    doesExist=0
+  fi
+
+  # executing command
+  if [[ $doesExist -eq 1 ]] && $command_or_path &>/dev/null; then
+    doesExist=0
+  fi
+
+	# variable
+  if [[ $doesExist -eq 1 ]] && [ -z "${command_or_path+x}" ]; then
+    doesExist=0
+  fi
+
+  # directory
+  if [[ $doesExist -eq 1 ]] && [[ -d "$command_or_path" ]]; then
+    doesExist=0
+  fi
+
+  if [[ $doesExist -eq 0 ]]; then
+    echo "  $app is already installed"
+  fi
+  echo "  $app $command_or_path: $doesExist"
+
+  return $doesExist
+}
+
+if ! exists "Homebrew" brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if ! exists "homebrew-cask" brew info brew-cask; then
+  brew tap caskroom/cask
+fi
+
+if ! exists "zsh" /bin/zsh; then
+  brew install zsh
+  chsh -s /bin/zsh
+fi
+
+if ! exists "nvm" ~/.nvm; then
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+fi
+
+if ! exists "hyper" brew cask ls hyper; then
+  brew cask install hyper
+fi

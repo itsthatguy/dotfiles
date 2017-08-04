@@ -40,3 +40,6 @@
     # git config
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
+
+    # hyper
+    ~/.hyper.js: hyper.js
