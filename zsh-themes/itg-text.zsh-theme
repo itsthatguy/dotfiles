@@ -126,10 +126,10 @@ function itg_git_current_upstream() {
 # Prompt builder functions
 function itg_dir() {
   if git rev-parse --git-dir > /dev/null 2>&1 && [ ! -d .git ]; then
+    git_dir_path=$(git rev-parse --show-prefix)
     git_dir_cdup=$(git rev-parse --show-cdup)
     cd $git_dir_cdup > /dev/null
     git_dir_top=$(echo ${PWD##*/})
-    git_dir_path=$(git rev-parse --show-prefix)
     dir="$git_dir_top/$git_dir_path %F{$fade}"
   else
     if [ -d .git ]; then
