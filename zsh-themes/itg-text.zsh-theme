@@ -130,12 +130,10 @@ function itg_dir() {
   if [ "$is_git_dir" -eq "0" ] && [ "$current_dir" != "${git_dir_path##*/}" ]; then
     git_dir_cdup=$(git rev-parse --show-cdup)
     git_dir_path=$(git rev-parse --show-prefix)
-    echo "git_dir_path: ${git_dir_path}"
     git_dir_top="$(
       cd $git_dir_cdup > /dev/null
       echo ${PWD##*/}
     )"
-    echo "git_dir_top: ${git_dir_top}"
     current_dir="$git_dir_top/${git_dir_path}"
     current_dir=${current_dir%/}
   fi
