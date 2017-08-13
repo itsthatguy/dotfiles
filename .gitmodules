@@ -12,3 +12,6 @@
 [submodule "zgen"]
 	path = zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "hyper_plugins/local/hyper-image-cursor"]
+	path = hyper_plugins/local/hyper-image-cursor
+	url = git@github.com:itsthatguy/hyper-image-cursor.git

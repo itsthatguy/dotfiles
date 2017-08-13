@@ -16,7 +16,6 @@
     userId: "3e2203c5-1262-4793-86f4-e432fa8d129b"
   "linter-ui-default":
     panelHeight: 62
-    showPanel: true
   navigate:
     f1: "http://devdocs.io/#q=&searchterm"
     f10: "https://duckduckgo.com/?q=&searchterm"

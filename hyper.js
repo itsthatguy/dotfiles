@@ -139,8 +139,8 @@ module.exports = {
   localPlugins: [
     'hyper-itg-theme',
     'hyper-image-cursor',
-    'hyper-statusline',
-    'hyper-ritalin',
-    'hyper-clearscreen',
+    // 'hyper-statusline',
+    // 'hyper-ritalin',
+    // 'hyper-clearscreen',
   ]
 };
