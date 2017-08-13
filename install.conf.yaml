@@ -44,4 +44,5 @@
 
 - shell:
   - [./bootstrap, install apps]
+  - [mkdir ~/.vim/.{swp,backup}, Making vim backup and swap directories]
   - [vim +PluginInstall +qall, Install vim plugins]
