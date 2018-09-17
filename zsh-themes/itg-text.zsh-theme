@@ -121,25 +121,21 @@ function itg_git_current_upstream() {
   echo $upstream
 }
 
-#
 # CHANGES THE DIRECTORY INFORMATION
 # Prompt builder functions
 function itg_dir() {
-  if git rev-parse --git-dir > /dev/null 2>&1 && [ ! -d .git ]; then
+  current_dir=${PWD##*/}
+  if git rev-parse --git-dir > /dev/null 2>&1 && [[ ! -e ".git" ]]; then
     git_dir_cdup=$(git rev-parse --show-cdup)
-    cd $git_dir_cdup > /dev/null
-    git_dir_top=$(echo ${PWD##*/})
     git_dir_path=$(git rev-parse --show-prefix)
-    dir="$git_dir_top/$git_dir_path %F{$fade}"
-  else
-    if [ -d .git ]; then
-      suffix="%F{$fade}"
-    else
-      suffix=""
-    fi
-    dir="%1~$suffix"
+    git_dir_top="$(
+      cd $git_dir_cdup > /dev/null
+      echo ${PWD##*/}
+    )"
+    current_dir="$git_dir_top/${git_dir_path}"
+    current_dir=${current_dir%/}
   fi
-  echo -n "%F{$normal}$dir"
+  echo -n $current_dir
 }
 
 #
@@ -147,7 +143,7 @@ function itg_dir() {
 function itg_git() {
   # Is this a dirty git directory?
   # This check is done first to set colors
-  if ($(git_is_dirty)); then
+  if ($(git_is_dirty > /dev/null 2>&1)); then
     git_status_color_f=$warning
   else
     git_status_color_f=$fade

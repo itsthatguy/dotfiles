@@ -8,7 +8,42 @@
 - shell:
   - [xcode-select --install, Installing xcode tools]
   - [git submodule update --init --recursive, Installing submodules]
-  - [brew install zsh, Installing zsh]
+  -
+    command: mkdir -p ~/.nvm && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    stderr: true
+    description: Installing nvm
+
+- brew:
+  - chruby
+  - heroku/brew/heroku
+  - mongodb
+  - mtr
+  - openssl
+  - pyenv
+  - python
+  - python@2
+  - redis
+  - ruby-install
+  - yarn
+  - zsh
+
+- cask:
+  - alfred
+  - caffeine
+  - discord
+  - dropbox
+  - google-chrome
+  - graphiql
+  - iterm2
+  - omnigraffle
+  - postman
+  - sketch
+  - slack
+  - spectacle
+  - spotify
+  - visual-studio-code
+
+- shell:
   - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
   - [vim +PluginInstall +qall, Install vim plugins]
 
