@@ -17,6 +17,7 @@
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
   put = !sh -c 'git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+  putf = !sh -c 'git push -u origin $(git rev-parse --abbrev-ref HEAD) --no-verify'
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standard
   redo = commit --amen -Chead

@@ -7,30 +7,18 @@
 
 - shell:
   - [xcode-select --install, Installing xcode tools]
+  - ['command -v brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', Installing homebrew]
   - [git submodule update --init --recursive, Installing submodules]
-  -
-    command: mkdir -p ~/.nvm && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    stderr: true
-    description: Installing nvm
 
 - brew:
-  - chruby
-  - heroku/brew/heroku
-  - mongodb
+  - asdf
   - mtr
   - openssl
-  - pyenv
-  - python
-  - python@2
-  - redis
-  - ruby-install
-  - yarn
   - zsh
 
 - cask:
   - alfred
   - caffeine
-  - discord
   - dropbox
   - google-chrome
   - graphiql
@@ -43,15 +31,27 @@
   - spotify
   - visual-studio-code
 
+- asdf:
+  - plugin: python
+    url: https://github.com/tuvistavie/asdf-python.git
+  - plugin: elixir
+    url: https://github.com/asdf-vm/asdf-elixir.git
+  - plugin: redis
+    url: https://github.com/smashedtoatoms/asdf-redis.git
+  - plugin: postgres
+    url: https://github.com/smashedtoatoms/asdf-postgres.git
+  - plugin: mongodb
+    url: https://github.com/sylph01/asdf-mongodb.git
+  - plugin: nodejs
+    url: https://github.com/asdf-vm/asdf-nodejs.git
+  - plugin: ruby
+    url: https://github.com/asdf-vm/asdf-ruby.git
+
 - shell:
-  - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
   - [vim +PluginInstall +qall, Install vim plugins]
+  - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
 
 - link:
-    # tmux config
-    ~/.tmux.conf: tmux.conf
-    ~/.tmux: tmux
-
     # vim config
     ~/.vim: vim
     ~/.vimrc: vimrc

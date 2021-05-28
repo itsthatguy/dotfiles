@@ -47,15 +47,6 @@ COMPLETION_WAITING_DOTS="true"
 # bash is stupid sometimes and enter key dont work
 stty icrnl
 
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# tabtab source for yo package
-# uninstall by removing these lines or running `tabtab uninstall yo`
-[[ -f /usr/local/opt/nvm/versions/node/v4.1.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /usr/local/opt/nvm/versions/node/v4.1.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Android stuff
 export ANDROID_SDK=$HOME/android-sdk-macosx
 export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
@@ -63,3 +54,17 @@ export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
 # added by travis gem
 [ -f /Users/kevin/.travis/travis.sh ] && source /Users/kevin/.travis/travis.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# asdf
+export ASDF_DIR=$(brew --prefix asdf)
+source $ASDF_DIR/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
+
+export NPM_TOKEN=
+
+# Needed to indicate to cars_platform where to seek a DB connection
+export PSQL_SOURCE=docker

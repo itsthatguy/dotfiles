@@ -136,10 +136,38 @@ alias mongoup='mongod --dbpath=$HOME/.mongo'
 alias mongodown='mongod --shutdown'
 
 # - postgres
-alias pgup='/usr/local/Cellar/postgresql/9.6.2/bin/pg_ctl -D $PGDATA -l $PGDATA/server.log start' #'pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgdown='/usr/local/Cellar/postgresql/9.6.2/bin/pg_ctl -D $PGDATA stop -s -m fast'
+# alias pgup='/usr/local/Cellar/postgresql/9.6.2/bin/pg_ctl -D $PGDATA -l $PGDATA/server.log start' #'pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+# alias pgdown='/usr/local/Cellar/postgresql/9.6.2/bin/pg_ctl -D $PGDATA stop -s -m fast'
+alias pgup='pg_ctl start'
+alias pgdown='pg_ctl stop'
 
 ###########################################
 # awesome
 alias starwars='telnet towel.blinkenlights.nl'
 alias nyan='telnet nyancat.dakko.us'
+
+alias recam='sudo killall VDCAssistant'
+
+salt_the_earth () {
+cd ~/code/cars/cars_platform
+echo $(pwd)
+echo -e "$(tput setaf 4)$(tput setab 2)Have you closed VSCode, disconnected from your local PostGres and are running this command in a terminal window?\n Input the corresponding number to continue. $(tput sgr0)"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) broken_arrow; break;;
+        No ) echo "Bye Felicia"; break;;
+    esac
+done
+}
+broken_arrow () {
+  echo "$(tput setaf 4)$(tput setab 2)Deleting deps _build and .elixir_ls$(tput sgr0)"
+  rm -rf deps _build .elixir_ls
+  echo "$(tput setaf 4)$(tput setab 2)Getting your deps$(tput sgr0)"
+  mix deps.get
+  echo "$(tput setaf 4)$(tput setab 2)Starting elastic search...$(tput sgr0)"
+  docker-compose up -d
+  echo "$(tput setaf 4)$(tput setab 2)Running script/setup...$(tput sgr0)"
+  script/setup
+  echo "$(tput setaf 4)$(tput setab 2)Building plt...$(tput sgr0)"
+  mix dialyzer --plt
+}

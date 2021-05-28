@@ -11,8 +11,8 @@ export GOPROTOOLS="$HOME/git/clients/gopro/gopro-tools"
 export PATH=$GOPROTOOLS:$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Various Environment Variables
-export PGDATA='/usr/local/var/postgres'
-export PGHOST=localhost
+# export PGDATA='/usr/local/var/postgres'
+# export PGHOST=localhost
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
 export ANDROID_HOME=/usr/local/opt/android-sdk
