@@ -71,7 +71,6 @@ Plugin 'rking/ag.vim'
 " Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
@@ -93,8 +92,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 
 " tmux
-Plugin 'benmills/vimux'
-Plugin 'jgdavey/vim-turbux'
+" Plugin 'edkolev/tmuxline.vim'
+" Plugin 'benmills/vimux'
+" Plugin 'jgdavey/vim-turbux'
 
 " tools
 Plugin 'bartek/vim-draftin'
