@@ -49,7 +49,8 @@
 
 - shell:
   - [vim +PluginInstall +qall, Install vim plugins]
-  - [chsh -s /usr/local/bin/zsh, Setting zsh as the default shell]
+  - [mkdir ~/.vim/.backup, Create vim backup directory]
+  - [mkdir ~/.vim/.swp, Create vim swap directory]
 
 - link:
     # vim config
