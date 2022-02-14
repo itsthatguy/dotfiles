@@ -8,7 +8,7 @@ set encoding=utf-8
 set iskeyword+=-,_
 
 syntax on
-colorscheme itg-dark
+colorscheme itg-dark-appx
 " set background=light
 " colorscheme snappy-light
 
