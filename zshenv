@@ -15,19 +15,8 @@ export PATH=$GOPROTOOLS:$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bi
 # export PGHOST=localhost
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
-export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # # docker-machine config
 # if [[ "$(docker-machine status vikinghug)" = "Running" ]]; then
 #   eval "$(docker-machine env vikinghug)"
 # fi
-
-# additional config
-[ -f ~/.zshsecrets ] && source ~/.zshsecrets
-
-# chruby's autoload is bad, and it should feel bad
-if [[ -e /usr/local/share/chruby ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-  chruby $(cat ~/.ruby-version)
-fi

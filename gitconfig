@@ -53,3 +53,5 @@
   email = "kevin@itsthatguy.com"
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
