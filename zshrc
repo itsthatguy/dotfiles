@@ -34,12 +34,6 @@ wd() { source $MODULES_PATH/wd/wd.sh }
 fpath=($MODULES_PATH/wd $fpath)
 rm -f ~/.zcompdump; compinit
 
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit
-compinit
-
 #################################################################
 # ZSH SETUP END
 #################################################################
@@ -67,8 +61,14 @@ export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # asdf
-export ASDF_DIR=$HOME/.asdf
+export ASDF_DIR=$(brew --prefix asdf)/libexec
 source $ASDF_DIR/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
 
 # Needed to indicate to cars_platform where to seek a DB connection
 export PSQL_SOURCE=docker
