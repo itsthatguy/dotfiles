@@ -7,8 +7,7 @@ export NPM="/usr/local/bin/npm"
 export HEROKU="/usr/local/heroku/bin"
 export GOPATH="$HOME/.go"
 export GOBIN="$GOPATH/bin"
-export GOPROTOOLS="$HOME/git/clients/gopro/gopro-tools"
-export PATH=$GOPROTOOLS:$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # Various Environment Variables
 # export PGDATA='/usr/local/var/postgres'

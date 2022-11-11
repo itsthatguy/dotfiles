@@ -8,7 +8,9 @@ set encoding=utf-8
 set iskeyword+=-,_
 
 syntax on
-colorscheme itg-dark-appx
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'default'
+colorscheme material
 " set background=light
 " colorscheme snappy-light
 

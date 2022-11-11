@@ -14,8 +14,8 @@ alias rake='noglob rake'
 alias ls='ls -G'
 
 # - reload / edit zsh configs
-alias eae="atom ~/.zshenv ~/.zshrc"
-alias eax="source ~/.zshenv"
+alias eae="vim ~/.zshenv ~/.zshrc"
+alias eax="source ~/.zshenv && source ~/.zshrc"
 
 # - editors
 alias v.="mvim ."

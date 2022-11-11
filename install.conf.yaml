@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - brew:
+  - asdf
   - mtr
   - postman
   - figma
@@ -20,17 +21,16 @@
     url: https://github.com/sylph01/asdf-mongodb.git
   - plugin: ruby
     url: https://github.com/asdf-vm/asdf-ruby.git
-
-- shell:
-  - [vim +PluginInstall +qall, Install vim plugins]
-  - [mkdir ~/.vim/.backup, Create vim backup directory]
-  - [mkdir ~/.vim/.swp, Create vim swap directory]
-
+    
 - link:
     # vim config
     ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.vimrc.local: vimrc.local
+    ~/.vimrc:
+      relink: true
+      path: vimrc
+    ~/.vimrc.local:
+      relink: true
+      path: vimrc.local
 
     # zsh config
     ~/.zshenv: zshenv
@@ -47,3 +47,9 @@
     # git config
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
+
+- shell:
+  - [mkdir ~/.vim/.backup, Create vim backup directory]
+  - [mkdir ~/.vim/.swp, Create vim swap directory]
+  - [vim +PluginInstall +qall, Install vim plugins]
+

@@ -101,6 +101,7 @@ Plugin 'bartek/vim-draftin'
 
 " style
 Plugin 'godlygeek/csapprox'
+Plugin 'kaicataldo/material.vim', { 'branch': 'main' }
 
 call vundle#end()
 
