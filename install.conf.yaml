@@ -5,45 +5,19 @@
 
 - clean: ['~']
 
-- shell:
-  - [xcode-select --install, Installing xcode tools]
-  - ['command -v brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', Installing homebrew]
-  - [git submodule update --init --recursive, Installing submodules]
-
 - brew:
-  - asdf
   - mtr
-  - openssl
-  - zsh
-
-- cask:
-  - alfred
-  - caffeine
-  - dropbox
-  - google-chrome
-  - graphiql
-  - iterm2
-  - omnigraffle
   - postman
-  - sketch
-  - slack
+  - figma
   - spectacle
   - spotify
   - visual-studio-code
 
 - asdf:
-  - plugin: python
-    url: https://github.com/tuvistavie/asdf-python.git
-  - plugin: elixir
-    url: https://github.com/asdf-vm/asdf-elixir.git
   - plugin: redis
     url: https://github.com/smashedtoatoms/asdf-redis.git
-  - plugin: postgres
-    url: https://github.com/smashedtoatoms/asdf-postgres.git
   - plugin: mongodb
     url: https://github.com/sylph01/asdf-mongodb.git
-  - plugin: nodejs
-    url: https://github.com/asdf-vm/asdf-nodejs.git
   - plugin: ruby
     url: https://github.com/asdf-vm/asdf-ruby.git
 

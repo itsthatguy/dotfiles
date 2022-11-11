@@ -15,7 +15,7 @@ alias ls='ls -G'
 
 # - reload / edit zsh configs
 alias eae="atom ~/.zshenv ~/.zshrc"
-alias eax="source ~/.zshrc"
+alias eax="source ~/.zshenv"
 
 # - editors
 alias v.="mvim ."
