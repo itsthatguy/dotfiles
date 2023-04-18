@@ -1,6 +1,6 @@
 [core]
   editor = vim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
 [help]
   autocorrect = 1
 [alias]

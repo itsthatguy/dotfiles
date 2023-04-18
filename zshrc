@@ -57,12 +57,17 @@ export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Homebrew & asdf
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# asdf
-export ASDF_DIR=$(brew --prefix asdf)/libexec
+  export ASDF_DIR=$(brew --prefix asdf)/libexec
+else
+  export ASDF_DIR=$HOME/.asdf/libexec
+fi
+
 source $ASDF_DIR/asdf.sh
+
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -75,7 +80,11 @@ export PSQL_SOURCE=docker
 
 # My Scripts
 source "$HOME/.scripts/aliases.sh"
+# My custom bins
+source "$HOME/.scripts/bins.sh"
 
 [ -f $HOME/.cars_especial ] && source $HOME/.cars_especial
 
-export NPM_TOKEN="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"
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+eval "$(starship init zsh)"
