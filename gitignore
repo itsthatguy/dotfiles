@@ -96,4 +96,9 @@ settings.yml
 .sublime-project
 .un
 
+# Notes
 _NOTES*
+.notes/
+
+.act/
+.actrc
