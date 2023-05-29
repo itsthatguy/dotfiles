@@ -1,0 +1,10 @@
+
+### If you want to build PHP with asdf
+# PKGS=( openssl libtiff gmp libpng mpfr libyaml icu4c webp unixodbc jpeg libpq )
+
+# for pkg_name in ${PKGS[@]}; do
+#   local PKG_PATH=$HOMEBREW_PREFIX/opt/$pkg_name/lib/pkgconfig
+#   [ -d "$PKG_PATH" ] \
+#     && export PKG_CONFIG_PATH="${PKG_PATH}:${PKG_CONFIG_PATH}" \
+#     || echo "can't find ${PKG_PATH}...";
+# done

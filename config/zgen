@@ -1,0 +1,15 @@
+load zgen
+if ! zgen save; then
+  echo "Creating a zgen save"
+  zgen prezto
+  zgen prezto git
+  zgen prezto command-not-found
+  zgen prezto syntax-highlighting
+  zgen prezto zsh-users/zsh-completions src
+fi
+
+zsh modules
+export MODULES_PATH=$HOME/.zmodules
+wd() { source $MODULES_PATH/wd/wd.sh }
+fpath=($MODULES_PATH/wd $fpath)
+rm -f ~/.zcompdump; compinit

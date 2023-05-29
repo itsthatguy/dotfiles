@@ -41,6 +41,8 @@ alias jest='nocorrect jest'
 ###########################################
 # KUBE
 alias k="kubectl"
+alias kns="kubens"
+alias kctx="kubectx"
 
 ###########################################
 # docker
@@ -81,8 +83,9 @@ function gphm() {
 
 ###########################################
 # node
+# here's a little bash function to replace the functionality of npm bin (so you can run ne <local binary> )
+function ne() { "./node_modules/.bin/${@}" | tr -s / }
 alias gulp='nocorrect gulp'
-alias ne='PATH=$(npm bin):$PATH'
 alias jib='sails-migrations'
 
 ###########################################
