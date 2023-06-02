@@ -1,20 +1,23 @@
 [submodule "vim/bundle/Vundle.vim"]
-  path = vim/bundle/Vundle.vim
+	path = modules/Vundle.vim
   url = git@github.com:gmarik/Vundle.vim.git
   ignore = dirty
 [submodule "prezto"]
-	path = prezto
+	path = modules/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
 [submodule "zgen"]
-	path = zgen
+	path = modules/zgen
 	url = https://github.com/tarjoilija/zgen.git
 [submodule "dotbot-brew"]
-	path = dotbot-brew
+	path = modules/dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
 [submodule "dotbot-asdf"]
-	path = dotbot-asdf
+	path = modules/dotbot-asdf
 	url = https://github.com/sobolevn/dotbot-asdf.git
+[submodule "dotbot-rust"]
+	path = modules/dotbot-rust
+	url = https://github.com/alexcormier/dotbot-rust
+[submodule "dotbot"]
+	path = modules/dotbot
+	url = https://github.com/anishathalye/dotbot

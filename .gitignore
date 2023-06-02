@@ -4,5 +4,5 @@ vim/.netrwhist
 vim/view/*
 vim/bundle/
 oh-my-zsh/
-go_secrets.sh
 .DS_Store
+secret*

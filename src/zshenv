@@ -17,6 +17,24 @@ export PATH=$AWS_CLI:$RUSTBIN:$HEROKU:$GOBIN:$NPM:$MYSCRIPTS:$MYBIN:$BIN:$SBIN:/
 export TERM=xterm-256color
 export POW_DOMAINS=dev,test
 
+fullpath=$(realpath $HOME/.zshenv)
+export DOTDIR=$(dirname $fullpath)
+
+export DOTSCRIPTS="$DOTDIR/dotscripts";
+export DOTCONFIG="$DOTDIR/dotconfig"
+export GITDIR="$HOME/git/"
+
+export EDITOR="vim"
+
+# Android stuff
+export ANDROID_SDK=$HOME/android-sdk-macosx
+export ANDROID_NDK=$HOME/android-ndk/android-ndk-r10e
+
+ # Need to indicate to cars_platform where to seek a DB connection
+export PSQL_SOURCE=docker
+
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+
 # # docker-machine config
 # if [[ "$(docker-machine status vikinghug)" = "Running" ]]; then
 #   eval "$(docker-machine env vikinghug)"

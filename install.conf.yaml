@@ -3,53 +3,69 @@
       create: true
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - brew:
-  - asdf
-  - mtr
-  - postman
-  - figma
-  - spectacle
-  - spotify
-  - visual-studio-code
+    - alfred
+    - asdf
+    - bartender
+    - bash-completion
+    - brave-browser
+    - curl
+    - docker
+    - figma
+    - iterm2
+    - mtr
+    - obsidian
+    - postman
+    - shift
+    - spectacle
+    - spotify
+    - visual-studio-code
+    - zsh-completions
+    - zsh-vi-mode
 
 - asdf:
-  - plugin: redis
-    url: https://github.com/smashedtoatoms/asdf-redis.git
-  - plugin: mongodb
-    url: https://github.com/sylph01/asdf-mongodb.git
-  - plugin: ruby
-    url: https://github.com/asdf-vm/asdf-ruby.git
-    
+    - plugin: redis
+      url: https://github.com/smashedtoatoms/asdf-redis.git
+
+    - plugin: mongodb
+      url: https://github.com/sylph01/asdf-mongodb.git
+
+    - plugin: nodejs
+      global: 16.13.2
+
+    - plugin: ruby
+      url: https://github.com/asdf-vm/asdf-ruby.git
+      global: 3.2.1
+
+    - plugin: erlang
+      url: https://github.com/asdf-vm/asdf-erlang.git
+      global: 25.1.2
+
+    - plugin: elixir
+      url: https://github.com/asdf-vm/asdf-elixir.git
+      global: 1.14.2-otp-25
+
+    - plugin: terraform
+      url: https://github.com/Banno/asdf-hashicorp.git
+      global: 1.2.4
+
+# - cargo:
+#     - starship
+
 - link:
+    ~/:
+      glob: true
+      path: src/*
+      prefix: .
+
     # vim config
     ~/.vim: vim
-    ~/.vimrc:
-      relink: true
-      path: vimrc
-    ~/.vimrc.local:
-      relink: true
-      path: vimrc.local
-
-    # zsh config
-    ~/.zshenv: zshenv
-    ~/.zshrc: zshrc
-    ~/.zgen: zgen
-    ~/.zsh/themes/itg-text.zsh-theme: zsh-themes/itg-text.zsh-theme
-    ~/.zprezto: prezto
-    ~/.zpreztorc: zpreztorc
-    ~/.scripts: scripts
-
-    # ruby config
-    ~/.gemrc: gemrc
-
-    # git config
-    ~/.gitconfig: gitconfig
-    ~/.gitignore: gitignore
 
 - shell:
-  - [mkdir ~/.vim/.backup, Create vim backup directory]
-  - [mkdir ~/.vim/.swp, Create vim swap directory]
-  - [vim +PluginInstall +qall, Install vim plugins]
-
+    - [mkdir ~/.vim/.backup, Create vim backup directory]
+    - [mkdir ~/.vim/.swp, Create vim swap directory]
+    - [vim +PluginInstall +qall, Install vim plugins]
+    - [compaudit | xargs chmod g-w, Setting zsh-completions permissions]
+    - [cd ~/ && asdf install]

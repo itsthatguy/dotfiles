@@ -3,16 +3,31 @@
 set -e
 
 CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+DOTBOT_DIR="modules/dotbot"
 
 DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MODULES_DIR=$BASE_DIR/modules
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+echo "BASE_DIR => $BASE_DIR"
+echo "MODULES_DIR => $MODULES_DIR"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
-  -d "${BASEDIR}" \
-  --plugin-dir dotbot-asdf \
-  --plugin-dir dotbot-brew \
+cd "${BASE_DIR}"
+# git submodule update --init --recursive
+git submodule update --init --remote $MODULES_DIR/dotbot
+git submodule update --init --remote $MODULES_DIR/dotbot-asdf
+git submodule update --init --remote $MODULES_DIR/dotbot-brew
+git submodule update --init --remote $MODULES_DIR/dotbot-rust
+
+"${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+  -p $MODULES_DIR/dotbot-rust/rust.py \
+  -d "${BASE_DIR}" \
+  --plugin-dir $MODULES_DIR/dotbot-asdf \
+  --plugin-dir $MODULES_DIR/dotbot-brew \
+  --plugin-dir $MODULES_DIR/dotbot-rust \
   -c "${CONFIG}" "${@}"
+
+# "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+#   -d "${BASE_DIR}" \
+#   --plugin-dir dotbot-brew \
+#   -c "${CONFIG}" "${@}"

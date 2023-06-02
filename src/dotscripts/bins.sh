@@ -1,8 +1,8 @@
 export PATH=$AWS_CLI:$PATH
 
 bins_array=(
-  "$HOME/git/cars-connect/target/debug/"
+  "$DOTSCRIPTS/bins/"
+  "$DOTSCRIPTS/secret-bins/"
 )
-
 
 shexport $bins_array
